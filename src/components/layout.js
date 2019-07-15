@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
 
+import Footer from "./footer"
 import Header from "./header"
 import "./layout.css"
 
@@ -22,11 +23,6 @@ const Content = styled.div`
 
 const GatsbyLink = styled.a`
   margin-left: 5px;
-`
-
-const Footer = styled.footer`
-  display: flex;
-  justify-content: center;
 `
 
 const Layout = ({ children }) => (
@@ -45,11 +41,8 @@ const Layout = ({ children }) => (
         <Header siteTitle={data.site.siteMetadata.title} />
         <Content>
           <main>{children}</main>
-          <Footer>
-            © {new Date().getFullYear()}, Paul Yakovlev
-            {` `}
-          </Footer>
         </Content>
+        <Footer />
       </>
     )}
   />
